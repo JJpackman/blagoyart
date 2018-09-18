@@ -6,6 +6,7 @@
 @import "./global/_variables.less";
 @import "./global/_helpers.less";
 @import "./global/_fonts.less";
+@import "./global/_mixins.less";
 
 body {
   font-family: "PT Sans Regular";
@@ -16,4 +17,32 @@ body {
 img {
   height: auto;
   max-width: 100%;
+}
+
+.page-header__wrapper {
+  .container(1245px);
+}
+
+.page-header__nav {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  border-top: 1px solid @header-dividers-color;
+  border-bottom: 1px solid @header-dividers-color;
+}
+
+.slider__wrapper {
+  .container(1355px);
+}
+
+.user-block__goods {
+  text-decoration: none;
+
+  &::before {
+    content: attr(data-goods-count);
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: 50%;
+    color: white;
+    background-color: @icon-color;
+  }
 }
