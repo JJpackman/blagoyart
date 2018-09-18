@@ -1,0 +1,17 @@
+{
+  "js": ["src/js/lib/**/*", "src/js/polyfills.js", "src/js/script.js"],
+  "src": {
+    "root": "src",
+    "less": "src/less",
+    "js": "src/js",
+    "img": "src/img",
+    "fonts": "src/fonts"
+  },
+  "build": {
+    "root": "build",
+    "css": "build/css",
+    "img": "build/img",
+    "js": "build/js",
+    "fonts": "build/fonts"
+  }
+}
