@@ -12,19 +12,23 @@
 <body>
   <header class="page-header">
     <div class="page-header__wrapper">
-      <a class="logo" aria-label="Moove to main page">
-        <img src="" width="179" height="23" alt="логотип Blagoyart, интернет магазин">
-        <span class="logo__caption">Интернет-магазин «Благой арт»</span>
-      </a>
       <div class="page-header__top">
-        <form>
-          <input type="search" name="query" placeholder="Введите название или артикул">
-          <svg>
-            <use></use>
+        <a class="page-header__logo logo" aria-label="Moove to main page">
+          <picture>
+            <source type="image/webp" srcset="img/logo@1x.webp 1x, img/logo@2x.webp 2x">
+            <img src="img/logo@1x.png" srcset="img/logo@2x.png 2x" width="179" height="23" alt="логотип Blagoyart">
+          </picture>
+          <span class="logo__caption">Интернет-магазин «Благой арт»</span>
+        </a>
+        <div class="page-header__search search">
+          <label class="h-visually-hidden" for="search">Поиск товара: </label>
+          <input class="search__field" type="search" name="query" placeholder="Введите название или артикул" role="search">
+          <svg class="search__icon" height="18" width="18" aria-hidden="true" role="presentation">
+            <use xlink:href="img/sprite.svg#icon-search"></use>
           </svg>
-        </form>
-        <div class="page-header__contact-info">
-          <a href="tel:+78007078139">+7 (800) 707-81-39</a>
+        </div>
+        <div class="page-header__contact-info contact-info">
+          <a class="contact-info__tel" href="tel:+78007078139">+7 (800) 707-81-39</a>
           <div>
             <span class="contact-info__working-hours">
               ПН-ПТ с <time>9:00</time> до <time>18:00</time>
@@ -36,33 +40,71 @@
       </div>
       <nav class="page-header__nav">
         <ul class="nav__links">
-          <li><a href="#">Каталог товаров</a></li>
-          <li><a href="#">Условия работы</a></li>
-          <li><a href="#">Скидки</a></li>
-          <li><a href="#">Оплата и доставка</a></li>
-          <li><a href="#">Документы</a></li>
-          <li><a href="#">Контакты</a></li>
+          <li class="nav__link-wrapper">
+            <a class="nav__link-item  nav__link-item--catalog" href="#">
+              <svg class="nav__link-icon" height="12" width="16" aria-hidden="true" role="presentation">
+                <use xlink:href="img/sprite.svg#icon-catalog"></use>
+              </svg>
+              Каталог товаров
+              <svg class="nav__link-icon" height="7" width="11" aria-hidden="true" role="presentation">
+                <use xlink:href="img/sprite.svg#icon-arrow"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="nav__link-wrapper"><a class="nav__link-item" href="#">Условия работы</a></li>
+          <li class="nav__link-wrapper"><a class="nav__link-item" href="#">Скидки</a></li>
+          <li class="nav__link-wrapper"><a class="nav__link-item" href="#">Оплата и доставка</a></li>
+          <li class="nav__link-wrapper"><a class="nav__link-item" href="#">Документы</a></li>
+          <li class="nav__link-wrapper"><a class="nav__link-item" href="#">Контакты</a></li>
         </ul>
         <ul class="nav__user-block user-block">
-          <li><a href="#"><span class="h-visually-hidden">Козина</span></a></li>
-          <li><a class="user-block__goods" href="#" data-goods-count="10">Товаров / 56 789 P</a></li>
-          <li><a href="#">Войти</a></li>
+          <li class="user-block__link-wrapper">
+            <a class="user-block__link" href="#">
+              <span class="h-visually-hidden">Козина</span>
+              <svg class="user-block__icon" height="23" width="23" aria-hidden="true" role="button">
+                <use xlink:href="img/sprite.svg#icon-cart"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="user-block__link-wrapper">
+            <a class="user-block__link user-block__goods" href="#" data-goods-count="10">Товаров / 56 789 P</a>
+          </li>
+          <li class="user-block__link-wrapper">
+            <a class="user-block__link" href="#">
+              <svg class="user-block__icon" height="17" width="19" aria-hidden="true" role="presentation">
+                <use xlink:href="img/sprite.svg#icon-login"></use>
+              </svg>
+              <span class="user-block__link-text">Войти</span>
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
   </header>
   <article class="slider">
-    <ul class="slider__wrapper">
-      <li class="slider__slide">
-        <img src="" alt="Слайд 1. Новая коллекция SWAROVSKI уже здесь!">
-        <p class="slider__slide-description">
-          Новая коллекция SWAROVSKI уже здесь!
-        </p>
-      </li>
-    </ul>
-    <div class="slider__controls">
-      <button class="slider__controls-btn slider__controls-btn--prev" type="button">Предыдущий cлайд</button>
-      <button class="slider__controls-btn slider__controls-btn--next" type="button">Следующий слайд</button>
+    <div class="slider__wrapper">
+      <ul class="slider__slide-list">
+        <li class="slider__slide">
+          <img src="img/slide1.jpg" alt="Слайд 1. Новая коллекция SWAROVSKI уже здесь!">
+          <p class="slider__slide-description">
+            Новая коллекция<br> SWAROVSKI уже здесь!
+          </p>
+        </li>
+      </ul>
+      <div class="slider__controls">
+        <button class="slider__controls-btn slider__controls-btn--prev" type="button">
+          <span class="h-visually-hidden">Предыдущий cлайд</span>
+          <svg class="slider__controls-btn-icon" height="14" width="28" aria-hidden="true" role="presentation">
+            <use xlink:href="img/sprite.svg#icon-arrow"></use>
+          </svg>
+        </button>
+        <button class="slider__controls-btn slider__controls-btn--next" type="button">
+          <span class="h-visually-hidden">Следующий слайд</span>
+          <svg class="slider__controls-btn-icon" height="14" width="28" aria-hidden="true" role="presentation">
+            <use xlink:href="img/sprite.svg#icon-arrow"></use>
+          </svg>
+        </button>
+      </div>
     </div>
   </article>
   <script defer src="js/svg4everybody.min.js"></script>
