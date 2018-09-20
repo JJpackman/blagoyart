@@ -39,9 +39,10 @@
         </div>
       </div>
       <nav class="page-header__nav">
+        <button type="button" class="page-header__nav-toggler"></button>
         <ul class="nav__links">
           <li class="nav__link-wrapper">
-            <a class="nav__link-item  nav__link-item--catalog" href="#">
+            <a class="nav__link-item  nav__link-item--catalog" href="#" aria-haspopup="true" aria-expanded="false">
               <svg class="nav__link-icon" height="12" width="16" aria-hidden="true" role="presentation">
                 <use xlink:href="img/sprite.svg#icon-catalog"></use>
               </svg>
@@ -50,6 +51,37 @@
                 <use xlink:href="img/sprite.svg#icon-arrow"></use>
               </svg>
             </a>
+            <ul class="nav__sub-links">
+              <li>
+                <a class="nav__sub-link-item" href="#">
+                  Свадебная бижутерия
+                  <svg class="nav__link-icon nav__link-icon--dropdown" height="7" width="11" aria-hidden="true" role="presentation">
+                    <use xlink:href="img/sprite.svg#icon-arrow"></use>
+                  </svg>
+                </a>
+              </li>
+              <li><a class="nav__sub-link-item" href="#">Аксессуары для волос</a></li>
+              <li><a class="nav__sub-link-item" href="#">Броши</a></li>
+              <li class="nav__sub-link-wrapper">
+                <a class="nav__sub-link-item" href="#" aria-haspopup="true" aria-expanded="false">
+                  Мужские аксессуары
+                  <svg class="nav__link-icon nav__link-icon--dropdown" height="7" width="11" aria-hidden="true" role="presentation">
+                    <use xlink:href="img/sprite.svg#icon-arrow"></use>
+                  </svg>
+                </a>
+                <ul class="nav__sub-links">
+                  <li>
+                    <header class="nav__sub-links-header">Мужская бижутерия</header>
+                  </li>
+                  <li><a class="nav__sub-link-item" href="#">Браслеты</a></li>
+                  <li><a class="nav__sub-link-item" href="#">Кулоны</a></li>
+                  <li><a class="nav__sub-link-item" href="#">Зажимы и запонки</a></li>
+                </ul>
+              </li>
+              <li><a class="nav__sub-link-item" href="#">Клатчи</a></li>
+              <li><a class="nav__sub-link-item" href="#">Детская бижутерия</a></li>
+              <li><a class="nav__sub-link-item" href="#">Демонстрационное оборудование</a></li>
+            </ul>
           </li>
           <li class="nav__link-wrapper"><a class="nav__link-item" href="#">Условия работы</a></li>
           <li class="nav__link-wrapper"><a class="nav__link-item" href="#">Скидки</a></li>
@@ -58,16 +90,38 @@
           <li class="nav__link-wrapper"><a class="nav__link-item" href="#">Контакты</a></li>
         </ul>
         <ul class="nav__user-block user-block">
-          <li class="user-block__link-wrapper">
-            <a class="user-block__link" href="#">
-              <span class="h-visually-hidden">Козина</span>
-              <svg class="user-block__icon" height="23" width="23" aria-hidden="true" role="button">
-                <use xlink:href="img/sprite.svg#icon-cart"></use>
-              </svg>
+          <li class="user-block__link-wrapper h-mobile-only">
+            <a href="index.html" aria-label="Перейти на главную страницу">
+              <picture>
+                <source type="image/webp" srcset="img/home@1x.webp 1x, img/home@2x.webp 2x, img/home@3x.webp 3x">
+                <img src="img/home@1x.png" srcset="img/home@2x.png 2x, img/home@3x.png 3x" alt="Иконка на главную страницу"
+                  width="20" height="16">
+              </picture>
             </a>
           </li>
           <li class="user-block__link-wrapper">
-            <a class="user-block__link user-block__goods" href="#" data-goods-count="10">Товаров / 56 789 P</a>
+            <a class="user-block__link" href="#">
+              <span class="h-visually-hidden">Корзина</span>
+              <picture>
+                <source type="image/webp" srcset="img/cart-inverse@1x.webp 1x, img/cart-inverse@2x.webp 2x, img/cart-inverse@3x.webp 3x"
+                  media="(max-width: 515px)">
+                <source type="image/webp" srcset="img/cart-inverse@1x.png 1x, img/cart-inverse@2x.png 2x, img/cart-inverse@3x.png 3x"
+                  media="(max-width: 515px)">
+                <source type="image/webp" srcset="img/cart@1x.webp 1x, img/cart@2x.webp 2x, img/cart@3x.webp 3x">
+                <img class="user-block__cart" src="img/cart@1x.png" srcset="img/cart@2x.png 2x, img/cart@3x.png 3x"
+                  width="23" height="23" alt="Вход в корзину">
+              </picture>
+            </a>
+          </li>
+          <li class="user-block__link-wrapper user-block__goods-wrapper">
+            <a class="user-block__goods" href="#" data-goods-count="10">Товаров / 56 789 P</a>
+          </li>
+          <li class="user-block__link-wrapper h-mobile-only">
+            <a href="user-block__link" href="#" aria-label="Поиск товара">
+              <svg class="user-block__icon" height="17" width="19" aria-hidden="true" role="presentation">
+                <use xlink:href="img/sprite.svg#icon-search"></use>
+              </svg>
+            </a>
           </li>
           <li class="user-block__link-wrapper">
             <a class="user-block__link" href="#">
@@ -75,6 +129,15 @@
                 <use xlink:href="img/sprite.svg#icon-login"></use>
               </svg>
               <span class="user-block__link-text">Войти</span>
+            </a>
+          </li>
+          <li class="user-block__link-wrapper h-mobile-only">
+            <a href="tel:+78007078139" aria-label="Позвонить по телефону +78007078139">
+              <picture>
+                <source type="image/webp" srcset="img/tel@1x.webp 1x, img/tel@2x.webp 2x, img/tel@3x.webp 3x">
+                <img src="img/tel@1x.png" srcset="img/tel@2x.png 2x, img/tel@3x.png 3x" alt="Иконка телефона" width="16"
+                  height="17">
+              </picture>
             </a>
           </li>
         </ul>
